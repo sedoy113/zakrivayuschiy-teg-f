@@ -4,6 +4,7 @@
 	--accent-font: "PressStart2P";
 	--font-wght-bold: 700;
 	--font-wght-regular: 400;
+	--main-font-size: 18px;
 	--background-image: repeating-linear-gradient(
 			#d3d3d3,
 			#d3d3d3 2px,
@@ -20,4 +21,8 @@
 		linear-gradient(#e7e7e7, #1a1a1a);
 	--max-width: 700px;
 	--white-color: #fff;
+	--black-color: #000;
+	--like-contour-color: #000;
+	--like-sparks-color: #ff0000;
+	--like-main-body-color: none;
 }

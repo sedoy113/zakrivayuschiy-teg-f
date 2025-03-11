@@ -65,10 +65,28 @@
 					</article>
 				</li>
 			</ul>
+			<button class="btn btn--xl btn--like" type="button" aria-controls="modal" onclick="window.modal.showModal();">
+				<svg class="btn-icon-save" viewBox="0 0 29 28">
+					<use href="./svg/floppy.svg#floppy-disc" />
+				</svg>
+				<span class="btn__text">Сохранить на
+					память</span></button>
 		</section>
 
 	</main>
-
+	<dialog class="modal-popup" id="modal">
+		<div class="modal-popup__content">
+			<svg class="btn-icon-save btn-icon-save--xl" viewBox="0 0 29 28">
+				<use href="./svg/floppy.svg#floppy-disc" />
+			</svg>
+			<p class="modal-popup__text">Вставьте дискету,чтобы продолжить</p>
+		</div>
+		<form method="dialog">
+			<button type="submit" class="btn btn--like btn--modal">
+				<span class="btn__text">OK</span>
+			</button>
+		</form>
+	</dialog>
 </body>
 
 </html>

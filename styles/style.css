@@ -57,6 +57,12 @@
 	justify-content: center;
 }
 
+.card-block {
+	display: grid;
+	justify-items: center;
+	gap: 52px;
+}
+
 .card-block__list {
 	display: grid;
 	gap: 50px;
@@ -136,7 +142,8 @@
 	cursor: pointer;
 	padding: 0;
 }
-.btn__text {
+.btn__text,
+.btn-icon-save {
 	color: var(--white-color, #ffffff);
 	mix-blend-mode: difference;
 }
@@ -192,6 +199,42 @@
 
 .btn--like-icon:focus-visible {
 	border-color: var(--text-color, #000000);
+}
+
+.btn--xl {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	inline-size: 335px;
+	padding: 15px;
+}
+
+.btn--modal {
+	inline-size: 100%;
+}
+
+.btn-icon-save {
+	block-size: 21px;
+	inline-size: 21px;
+}
+
+.btn-icon-save--xl {
+	block-size: 39px;
+	inline-size: 39px;
+	flex-shrink: 0;
+}
+
+@media (width <= 375px) {
+	.btn-icon-save {
+		block-size: 28px;
+		inline-size: 28px;
+	}
+
+	.btn--xl {
+		flex-direction: column;
+		align-items: center;
+		inline-size: 306px;
+	}
 }
 
 .like-icon {
@@ -269,4 +312,32 @@
 
 .like-icon.is-liked .sparks {
 	animation: sparks 0.3s ease-in 0.3s 1 alternate;
+}
+
+.modal-popup {
+	padding: 30px;
+	gap: 30px;
+	max-inline-size: 355px;
+}
+
+.modal-popup[open] {
+	display: grid;
+}
+
+.modal-popup::backdrop {
+	opacity: 0.75;
+	background: var(--black-color, #000000);
+}
+
+.modal-popup__content {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.modal-popup__text {
+	font-family: var(--accent-font, "PressStart2P", serif);
+	font-size: 14px;
+	line-height: 1.5;
+	text-transform: uppercase;
 }

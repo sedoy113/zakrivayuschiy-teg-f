@@ -127,23 +127,146 @@
 	display: flex;
 	align-items: center;
 	align-self: flex-end;
+	gap: 5px;
 }
 
 .btn {
 	border: 0;
 	background-color: transparent;
 	cursor: pointer;
+	padding: 0;
+}
+.btn__text {
+	color: var(--white-color, #ffffff);
+	mix-blend-mode: difference;
 }
 
 .btn--like {
+	position: relative;
+	z-index: 1;
 	font-family: var(--accent-font, "PressStart2P", serif);
 	font-size: 14px;
 	line-height: 0.9;
 	border: 2px solid var(--black-color, #000000);
-	padding: 12px 37px;
+	padding: 12px;
+	inline-size: 130px;
+	transition: box-shadow 0.3s ease;
+	appearance: none;
+	background-color: var(--white-color, #ffffff);
+}
+
+.btn--like:focus {
+	outline: none;
+}
+
+.btn--like:focus-visible {
+	box-shadow: 2px 2px 0px 0px var(--black-color, #000000);
+}
+
+.btn--like::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: var(--black-color, #000000);
+	transition: transform 0.5s ease-in-out;
+	transform: scaleX(0);
+	transform-origin: left;
+	inline-size: 100%;
+	block-size: 100%;
+}
+
+.btn--like:hover::before {
+	transform: scaleX(1);
+}
+
+.btn--like-icon {
+	display: flex;
+	border: 2px solid transparent;
+	transition: border-color 0.3s ease;
+}
+
+.btn--like-icon:focus {
+	outline: none;
+}
+
+.btn--like-icon:focus-visible {
+	border-color: var(--text-color, #000000);
 }
 
 .like-icon {
 	block-size: 36px;
 	inline-size: 39px;
+}
+
+.like-icon .core {
+	fill: var(--page-background-color, #ffffff);
+	transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon .main-body {
+	fill: var(--page-background-color, #ffffff);
+	transition: fill 0.3s linear;
+}
+
+.like-icon .contour {
+	fill: var(--like-contour-color, #000000);
+	transition: fill 0.1s linear;
+}
+
+.like-icon .heart {
+	transform-origin: center;
+}
+
+.like-icon .sparks {
+	opacity: 0;
+}
+
+/* hover */
+
+.like-icon:hover .core {
+	fill: var(--like-contour-color, #000000);
+	transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+	fill: var(--like-contour-color, #000000);
+	transition: fill 0.3s linear 0.05s;
+}
+
+/* active */
+
+.like-icon:active .core {
+	fill: var(--like-sparks-color, #ff0000);
+	transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+	fill: var(--like-sparks-color, #ff0000);
+	transition: fill 0.3s linear 0.05s;
+}
+
+/* liked */
+
+.like-icon.is-liked .core {
+	fill: var(--like-sparks-color, #ff0000);
+	transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+	fill: var(--like-sparks-color, #ff0000);
+	transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+	fill: var(--like-sparks-color, #ff0000);
+	transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+	animation: heart 0.3s ease-in 0.1s 1 alternate;
+}
+
+.like-icon.is-liked .sparks {
+	animation: sparks 0.3s ease-in 0.3s 1 alternate;
 }

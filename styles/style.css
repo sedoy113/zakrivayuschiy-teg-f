@@ -99,6 +99,38 @@
 	display: flex;
 }
 
+.card-info--filter-brightness .card-info__image {
+	filter: brightness(70%);
+}
+
+.card-info--filter-grayscale .card-info__image {
+	filter: grayscale(70%) brightness(70%);
+}
+
+.card-info--filter-hue-rotate .card-info__image {
+	filter: hue-rotate(90deg);
+}
+
+.card-info--filter-invert .card-info__image {
+	filter: invert(75%);
+}
+
+.card-info--filter-saturate .card-info__image {
+	filter: saturate(30%);
+}
+
+.card-info--filter-sepia .card-info__image {
+	filter: sepia(60%);
+}
+
+.card-info--filter-blur .card-info__image {
+	filter: blur(5px);
+}
+
+.card-info--filter-multiple .card-info__image {
+	filter: blur(3px) sepia(80%) hue-rotate(90deg);
+}
+
 .card-info__wrap-text {
 	display: flex;
 	flex-direction: column;

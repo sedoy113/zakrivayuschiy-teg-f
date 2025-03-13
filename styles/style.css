@@ -28,16 +28,15 @@
 	margin-inline: auto;
 	font-family: var(--accent-font, "PressStart2P", fantasy);
 	text-transform: uppercase;
-	min-block-size: 368px;
 	border: 3px solid var(--black-color, #000000);
 	background: var(--white-color, #ffffff);
 }
 
-@media (width <= 375px) {
+/* @media (width <= 375px) {
 	.header {
 		min-block-size: 327px;
 	}
-}
+} */
 
 .header__text {
 	margin-block-end: 20px;

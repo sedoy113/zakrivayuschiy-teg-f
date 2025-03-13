@@ -26,17 +26,18 @@
 	justify-content: center;
 	margin-block-end: 100px;
 	margin-inline: auto;
+	padding: 128px 0;
 	font-family: var(--accent-font, "PressStart2P", fantasy);
 	text-transform: uppercase;
 	border: 3px solid var(--black-color, #000000);
 	background: var(--white-color, #ffffff);
 }
 
-/* @media (width <= 375px) {
+@media (width <= 375px) {
 	.header {
-		min-block-size: 327px;
+		padding: 120px 0;
 	}
-} */
+}
 
 .header__text {
 	margin-block-end: 20px;
@@ -75,6 +76,7 @@
 	padding: 4px 10px;
 	font-size: var(--main-font-size, 18px);
 	font-variation-settings: "wght" var(--font-wght-bold, 700);
+	line-height: normal;
 }
 
 .card-info__wrap-image {
@@ -152,11 +154,17 @@
 .card-info__text {
 	margin-block-end: 27px;
 	font-size: var(--main-font-size, 18px);
-	line-height: 1.2;
+	line-height: 118%;
+}
+
+@media (width <= 375px) {
+	.card-info__text {
+		line-height: 117%;
+	}
 }
 
 .card-info__text--last-mb {
-	margin-block-end: 25px;
+	margin-block-end: 20px;
 }
 
 .card-info__wrap-buttons {
@@ -357,6 +365,7 @@
 
 @media (width <= 375px) {
 	.modal-popup {
+		padding: 30px 42px;
 		max-inline-size: 341px;
 	}
 }
@@ -381,4 +390,14 @@
 	font-size: 14px;
 	line-height: 1.5;
 	text-transform: uppercase;
+}
+
+.modal-popup__text-sign {
+	letter-spacing: 20px;
+}
+
+@media (width <= 375px) {
+	.modal-popup__text-sign {
+		letter-spacing: 10px;
+	}
 }

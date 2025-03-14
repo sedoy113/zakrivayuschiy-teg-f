@@ -197,13 +197,19 @@
   z-index: 1;
   font-family: var(--accent-font, "PressStart2P", fantasy);
   font-size: 14px;
-  line-height: 93%;
+  line-height: 90%;
   border: 2px solid var(--black-color, #000000);
   padding: 12px;
   inline-size: 130px;
   transition: box-shadow 0.3s ease;
   appearance: none;
   background-color: var(--white-color, #ffffff);
+}
+
+@media (width <= 375px) {
+  .btn--like {
+    line-height: 93%;
+  }
 }
 
 .btn--like:focus {
